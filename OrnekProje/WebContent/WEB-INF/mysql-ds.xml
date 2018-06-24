@@ -1,13 +1,13 @@
 <datasources>
-	<datasource jndi-name="java:/enterprisePool" pool-name="asds-pool"
+	<datasource jndi-name="java:/giftregistryPool" pool-name="asds-pool"
 		enabled="true" use-ccm="false">
-		<connection-url>jdbc:mysql://localhost/enterprise</connection-url>
+		<connection-url>jdbc:mysql://localhost/giftregistry</connection-url>
 		<driver>mysql</driver>
 		<pool>
 			<min-pool-size>2</min-pool-size>
 			<max-pool-size>10</max-pool-size>
 			<prefill>true</prefill>
-		</pool>
+		</pool>		
 		<security>
 			<user-name>root</user-name>
 			<password>1234</password>

@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+<h1>My Events</h1><br/><br/>
+
+	 <h:form>
+	  <ul>
+		  <ui:repeat var="event" value="#{sendEventBean.events}">
+		  	<li>#{event.name}  -  #{event.date}  -  <p:inputTextarea binding="#{input}" rows="1" cols="35" />  ---  
+		  	<p:commandButton action="#{sendEventBean.sendEvent(input.value, event.name, event.eventCode)}" value="Send Invite" /> </li>
+		  </ui:repeat>
+	  </ul>
+		
+	</h:form>
+	<hr/>
+	<h:messages />
+
+<h:messages /><br/><br/>
+
+</body> 
+</html>

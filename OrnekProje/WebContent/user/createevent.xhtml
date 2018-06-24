@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+<center><h1>Create Event</h1><br/><br/>
+<hr/>
+<h:form id="form">
+    <p:growl id="msgs" showDetail="true" />
+ 
+ 		<p:outputLabel for="popup" value="Name: " />
+     	<p:inputText value="#{createEventBean.name}" /><br/><br/>
+     	
+        <p:outputLabel for="popup" value="Date: " />
+        <p:calendar id="popup" value="#{createEventBean.date}" /><br/><br/>
+        
+        <p:outputLabel for="popup" value="Deadline: "/>
+        <p:calendar id="popup2" value="#{createEventBean.deadline}" /><br/><br/>
+        
+        <p:outputLabel for="popup" value="Thank You Note: " />
+        <p:inputTextarea value="#{createEventBean.thankYouNote}" /><br/><br/><br/>
+
+	<p:commandButton action="#{createEventBean.saveEvent()}" value="Create" />
+ 
+    <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
+        <p:panelGrid id="display" columns="2" columnClasses="label,value">
+
+            <h:outputText value="Popup:" />
+            <h:outputText value="#{calendarView.date2}">
+                <f:convertDateTime pattern="MM/dd/yyyy" />
+            </h:outputText>
+
+        </p:panelGrid>
+    </p:dialog>
+</h:form>
+<h:form>
+
+</h:form>
+<hr/>
+<h:messages /><br/><br/>
+</center>
+</body> 
+</html>
